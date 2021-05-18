@@ -10,20 +10,18 @@
 
 // my solution
 
-// function anagrams(stringA, stringB) {
-//     const filterSortString = (string) => {
-//         return string
-//             .toLowerCase()
-//             .split("")
-//             .filter((char) => /[^\w]/g.test(char))
-//             .sort()
-//             .join("");
-//     };
+function anagrams(stringA, stringB) {
+    const filterSortString = (string) => {
+        return string
+            .toLowerCase()
+            .split("")
+            .filter((char) => /[a-zA-Z]/g.test(char))
+            .sort()
+            .join("");
+    };
 
-//     return filterSortString(stringA) === filterSortString(stringB)
-//         ? true
-//         : false;
-// }
+    return filterSortString(stringA) === filterSortString(stringB);
+}
 
 // function anagrams(stringA, stringB) {
 //     const aCharMap = buildCharMap(stringA);
@@ -50,7 +48,5 @@
 
 //     return charMap;
 // }
-
-function anagrams(stringA, stringB) {}
 
 module.exports = anagrams;
