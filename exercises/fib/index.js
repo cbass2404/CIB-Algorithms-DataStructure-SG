@@ -8,6 +8,21 @@
 // Example:
 //   fib(4) === 3
 
-function fib(n) {}
+function fib(n) {
+    if (n < 2) {
+        return n;
+    }
+    return fib(n - 1) + fib(n - 2);
+    // n < 2 ? n : fib(n - 1) + fib(n - 2);
+}
+
+// Fun addon to print the whole sequence
+const sequence = (count) => {
+    let sequenceArray = [];
+    for (let i = 1; i < count + 1; i++) {
+        sequenceArray.push(fib(i));
+    }
+    return sequenceArray.join(", ");
+};
 
 module.exports = fib;
