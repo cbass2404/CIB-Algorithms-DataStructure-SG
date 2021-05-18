@@ -28,7 +28,9 @@
 // }
 
 function capitalize(str) {
-    let result = str[0].toUpperCase();
+    let result = /[a-zA-z]/g.test(str[0])
+        ? str[0].toUpperCase()
+        : str[0] + str[1].toUpperCase();
 
     for (let i = 1; i < str.length; i++) {
         if (str[i - 1] === " ") {
