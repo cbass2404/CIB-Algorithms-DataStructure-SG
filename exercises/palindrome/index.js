@@ -24,12 +24,16 @@
 //     return false;
 // }
 
+// function palindrome(str) {
+//     let reversed = "";
+//     for (let char of str) {
+//         reversed = char + reversed;
+//     }
+//     return reversed === str ? true : false;
+// }
+
 function palindrome(str) {
-    let reversed = "";
-    for (let char of str) {
-        reversed = char + reversed;
-    }
-    return reversed === str ? true : false;
+    return str.split("").every((char, i) => char === str[str.length - i - 1]);
 }
 
 module.exports = palindrome;
