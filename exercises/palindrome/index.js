@@ -32,8 +32,18 @@
 //     return reversed === str ? true : false;
 // }
 
+// TODO: optimize so it doesn't repeat comparisons
+
+// function palindrome(str) {
+//     return str.split("").every((char, i) => char === str[str.length - i - 1]);
+// }
+
 function palindrome(str) {
-    return str.split("").every((char, i) => char === str[str.length - i - 1]);
+    return str.split("").every((char, i) => {
+        if (i < Math.floor(str.length / 2))
+            return char === str[str.length - i - 1];
+        return true;
+    });
 }
 
 module.exports = palindrome;
