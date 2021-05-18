@@ -20,13 +20,9 @@
 // }
 
 function reverseInt(n) {
-    let posNeg = Math.sign(n);
+    const reversed = n.toString().split("").reverse().join("");
 
-    if (posNeg !== 1) {
-        n = n * posNeg;
-        return parseInt(n.toString().split("").reverse().join("")) * posNeg;
-    }
-    return parseInt(n.toString().split("").reverse().join(""));
+    return parseInt(reversed) * Math.sign(n);
 }
 
 module.exports = reverseInt;
