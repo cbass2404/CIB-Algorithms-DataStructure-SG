@@ -18,15 +18,27 @@
 //     .join(" ");
 // }
 
+// function capitalize(str) {
+//     let words = [];
+//     str.split(" ").forEach((word) => {
+//         words.push(word[0].toUpperCase() + word.slice(1));
+//     });
+
+//     return words.join(" ");
+// }
+
 function capitalize(str) {
-    let words = [];
-    str.split(" ").forEach((word) => {
-        words.push(word[0].toUpperCase() + word.slice(1));
-    });
+    let result = str[0].toUpperCase();
 
-    return words.join(" ");
+    for (let i = 1; i < str.length; i++) {
+        if (str[i - 1] === " ") {
+            result += str[i].toUpperCase();
+        } else {
+            result += str[i];
+        }
+    }
+
+    return result;
 }
-
-console.log(capitalize("a lazy fox"));
 
 module.exports = capitalize;
