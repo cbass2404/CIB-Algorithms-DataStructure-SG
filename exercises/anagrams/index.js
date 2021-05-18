@@ -8,6 +8,21 @@
 //   anagrams('RAIL! SAFETY!', 'fairy tales') --> True
 //   anagrams('Hi there', 'Bye there') --> False
 
-function anagrams(stringA, stringB) {}
+// my solution
+
+function anagrams(stringA, stringB) {
+    const filterSortString = (string) => {
+        return string
+            .toLowerCase()
+            .split("")
+            .filter((char) => /[a-z]/.test(char))
+            .sort()
+            .join("");
+    };
+
+    return filterSortString(stringA) === filterSortString(stringB)
+        ? true
+        : false;
+}
 
 module.exports = anagrams;
