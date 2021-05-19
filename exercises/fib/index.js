@@ -8,21 +8,34 @@
 // Example:
 //   fib(4) === 3
 
+// function fib(n) {
+//     if (n < 2) {
+//         return n;
+//     }
+//     return fib(n - 1) + fib(n - 2);
+// }
+
 function fib(n) {
+    const fibArray = [0, 1];
+
     if (n < 2) {
         return n;
     }
-    return fib(n - 1) + fib(n - 2);
-    // n < 2 ? n : fib(n - 1) + fib(n - 2);
+
+    for (let i = 1; i < n; i++) {
+        fibArray.push(fibArray[i] + fibArray[i - 1]);
+    }
+
+    return fibArray[n];
 }
 
 // Fun addon to print the whole sequence
-const sequence = (count) => {
-    let sequenceArray = [];
-    for (let i = 1; i < count + 1; i++) {
-        sequenceArray.push(fib(i));
-    }
-    return sequenceArray.join(", ");
-};
+// const sequence = (count) => {
+//     let sequenceArray = [];
+//     for (let i = 1; i < count + 1; i++) {
+//         sequenceArray.push(fib(i));
+//     }
+//     return sequenceArray.join(", ");
+// };
 
 module.exports = fib;
