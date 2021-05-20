@@ -42,7 +42,7 @@ class Queue {
             this.stackTwo.push(this.stackOne.pop());
         }
 
-        const record = this.stackTwo.data[this.stackTwo.data.length - 1];
+        const record = this.stackTwo.peek();
 
         while (this.stackTwo.peek()) {
             this.stackOne.push(this.stackTwo.pop());
