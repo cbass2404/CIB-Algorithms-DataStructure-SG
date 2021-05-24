@@ -105,6 +105,26 @@ class LinkedList {
         }
         return null;
     }
+
+    removeAt(index) {
+        if (!this.head) {
+            return;
+        }
+
+        if (index === 0) {
+            this.head = this.head.next;
+            return;
+        }
+
+        const prev = this.getAt(index - 1);
+        if (!prev || !prev.next) {
+            return;
+        }
+
+        prev.next = prev.next.next;
+    }
+
+    insertAt(index, node) {}
 }
 
 module.exports = { Node, LinkedList };
